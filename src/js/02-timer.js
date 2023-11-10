@@ -33,12 +33,12 @@ const options = {
       buttonStart.disabled = true;
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
-buttonStart.disabled = false;
-    const converted = convertMs(delta);
-    // console.log(convertMs(delta));
-    renderDate(converted);
+      buttonStart.disabled = false;
+      const converted = convertMs(delta);
+      // console.log(convertMs(delta));
+      renderDate(converted);
     }
-     
+
   }
 };
 
@@ -59,7 +59,7 @@ function handleClick() {
 };
 
 function renderDate(date) {
-  const {days, hours, minutes, seconds} = date;
+  const { days, hours, minutes, seconds } = date;
   spanDay.textContent = addLeadingZero(days);
   spanHour.textContent = addLeadingZero(hours);
   spanMin.textContent = addLeadingZero(minutes);
@@ -67,6 +67,7 @@ function renderDate(date) {
 };
 
 function addLeadingZero(value) {
+  // console.log("value", value);
   return String(value).padStart(2, 0);
 };
 
